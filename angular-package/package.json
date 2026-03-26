@@ -1,0 +1,10 @@
+{
+  "name": "@geniusaisolutions/icons/angular",
+  "description": "Angular adapter for @geniusaisolutions/icons",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^19.0.0",
+    "@angular/core": "^19.0.0"
+  },
+  "sideEffects": false
+}

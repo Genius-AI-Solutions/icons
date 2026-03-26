@@ -1,0 +1,151 @@
+{
+  "name": "@geniusaisolutions/icons",
+  "version": "0.1.0",
+  "description": "A lightweight icon system with a framework-agnostic core and first-class frontend adapters.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Genius-AI-Solutions/icons.git"
+  },
+  "homepage": "https://github.com/Genius-AI-Solutions/icons#readme",
+  "bugs": {
+    "url": "https://github.com/Genius-AI-Solutions/icons/issues"
+  },
+  "keywords": [
+    "icons",
+    "svg",
+    "icon-library",
+    "design-system",
+    "react",
+    "vue",
+    "solid",
+    "svelte",
+    "angular",
+    "typescript"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "svelte",
+    "!dist/**/*.map",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./core": {
+      "types": "./dist/core.d.ts",
+      "import": "./dist/core.js"
+    },
+    "./react": {
+      "types": "./dist/react.d.ts",
+      "import": "./dist/react.js"
+    },
+    "./vue": {
+      "types": "./dist/vue.d.ts",
+      "import": "./dist/vue.js"
+    },
+    "./solid": {
+      "types": "./dist/solid.d.ts",
+      "import": "./dist/solid.js"
+    },
+    "./svelte": {
+      "types": "./svelte/index.d.ts",
+      "svelte": "./svelte/index.js",
+      "import": "./svelte/index.js"
+    },
+    "./angular": {
+      "types": "./dist/angular/index.d.ts",
+      "import": "./dist/angular/fesm2022/geniusaisolutions-icons-angular.mjs"
+    },
+    "./registries": {
+      "types": "./dist/registries.d.ts",
+      "import": "./dist/registries.js"
+    },
+    "./icons": {
+      "types": "./dist/icons.d.ts",
+      "import": "./dist/icons.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "npm run build:tsup && npm run build:angular",
+    "build:angular": "ng-packagr -p angular-package/ng-package.json",
+    "build:tsup": "tsup",
+    "build:example": "npm --prefix examples/vite-react run build",
+    "build:example:angular": "npm --prefix examples/angular run build",
+    "build:example:react": "npm --prefix examples/vite-react run build",
+    "build:example:node": "npm --prefix examples/node-ssr run build",
+    "build:example:solid": "npm --prefix examples/solid run build",
+    "build:example:svelte": "npm --prefix examples/svelte run build",
+    "build:example:vanilla": "npm --prefix examples/vanilla run build",
+    "build:example:vue": "npm --prefix examples/vue run build",
+    "build:examples": "npm run build:example:vanilla && npm run build:example:react && npm run build:example:vue && npm run build:example:solid && npm run build:example:svelte && npm run build:example:angular && npm run build:example:node",
+    "install:examples": "npm --prefix examples/vanilla ci && npm --prefix examples/vite-react ci && npm --prefix examples/vue ci && npm --prefix examples/solid ci && npm --prefix examples/svelte ci && npm --prefix examples/angular ci && npm --prefix examples/node-ssr ci",
+    "prepack": "npm run build",
+    "release:verify": "npm run typecheck && npm test && npm run validate:icons && npm run build:examples && npm pack --dry-run",
+    "test": "npm run build && node --test test",
+    "typecheck": "tsc --noEmit",
+    "validate:icons": "node scripts/validate-icon-catalog.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "tslib": "^2.8.1"
+  },
+  "peerDependencies": {
+    "@angular/common": "^19.0.0",
+    "@angular/core": "^19.0.0",
+    "react": "^18.2.0 || ^19.0.0",
+    "solid-js": "^1.9.0",
+    "svelte": "^5.0.0",
+    "vue": "^3.5.0"
+  },
+  "peerDependenciesMeta": {
+    "@angular/common": {
+      "optional": true
+    },
+    "@angular/core": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "solid-js": {
+      "optional": true
+    },
+    "svelte": {
+      "optional": true
+    },
+    "vue": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@angular/common": "^19.0.0",
+    "@angular/compiler-cli": "^19.0.0",
+    "@angular/core": "^19.0.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^5.0.0",
+    "ng-packagr": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "solid-js": "^1.9.0",
+    "tsup": "^8.3.5",
+    "typescript": "5.6.3",
+    "vite": "^6.1.0",
+    "vue": "^3.5.0"
+  }
+}

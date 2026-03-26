@@ -1,0 +1,12 @@
+{
+  "name": "@geniusaisolutions/icons-example-node-ssr",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "node render.mjs"
+  },
+  "dependencies": {
+    "@geniusaisolutions/icons": "file:../.."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@geniusaisolutions/icons-example-vanilla",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config vite.config.mjs",
+    "build": "tsc --noEmit && vite build --config vite.config.mjs"
+  },
+  "dependencies": {
+    "@geniusaisolutions/icons": "file:../.."
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0"
+  }
+}
